@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    background-image: url("Images/room.jpg"); 
+    background-color: #000;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  transition: opacity 0.5s ease-in-out; 
+    opacity: 1; 
+    margin: 0;
+    height: 100vh; 
+    
+}
+
+  body.scroll-locked {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: #333;
+    text-align: center;
+    color: white; 
+    text-shadow:
+      -1px -1px 0 #000, 
+      1px -1px 0 #000, 
+      -1px 1px 0 #000, 
+      1px 1px 0 #000; 
+  }
+
+body.fade-out {
+    opacity: 0; 
+}
+
+main {
+    padding: 20px;
+}
+
+.room-container {
+    position: relative;
+    width: 1141px;
+    height: 599px;
+    right: 203px;
+    top: -19px;
+    margin: 20px auto;
+
+}
+
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.hotspot:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.screen {
+  position: relative;
+  top: 189px;
+  right: -1022px;
+  width: 188px;
+  height: 131px;
+}
+
+.shelf {
+  bottom: 41px;
+  left: 1262px;
+  width: 175px;
+  height: 492px;
+}
+
+.trashcan {
+    bottom: 30px;
+    left: 1448px;
+    width: 80px;
+    height: 114px;
+}
+
+.door {
+  top: 17px;
+  right: 551px;
+  width: 188px;
+  height: 526px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>  
+  <link rel="stylesheet" href="room.css">
+  
+    <title>Anasayfa</title>
+    
+</head>
+<body>
+
+  <div class="room-container">
+      <div class="hotspot shelf" data-link="myprojects.html"></div>
+      <div class="hotspot screen" data-link="contact.html"></div>
+      <div class="hotspot trashcan" data-link="Aboutme.html"></div>
+      <div class="hotspot door" data-link="Aboutdevelopment.html"></div>
+  </div>
+  
+<main>
+  <p style="color: rgb(255, 255, 255);">Bilgisayar Ekranı = İletişim Sayfası | Çöp Kutusu = Hakkımda Sayfası | Raflar = Projelerim Sayfası | Kapı = Sayfaların Geliştirilmesi Hakkında Sayfası
+
+  </p>
+</main>
+<script>
+  const hotspots = document.querySelectorAll('.hotspot');
+
+hotspots.forEach(hotspot => {
+    hotspot.addEventListener('click', () => {
+        const link = hotspot.dataset.link;
+        if (link) {
+            window.location.href = link;
+        }
+    });
+});
+</script>
+</body>
+</html>

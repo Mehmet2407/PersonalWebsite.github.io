@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>İletişim Formu</title>
+<link rel="stylesheet" href="Stylecontact.css">
+</head>
+<body>
+    <a href="index.html" class="anasayfa">
+        <img src="Images/chair.png" alt="Anasayfa">
+                    
+    </a>
+<h1>Benimle İletişime Geç</h1>
+
+<form id="contactForm" onsubmit="return validateForm()" action="Validform.html" method="get"> 
+    <label for="name">İsim:</label>  
+    <input type="text" id="name">
+    <div id="nameError" class="error"></div>
+
+    <label for="surname">Soyisim:</label>
+    <input type="text" id="surname">
+    <div id="surnameError" class="error"></div>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email">
+    <div id="emailError" class="error"></div>
+
+    <label for="message">Mesaj:</label>
+    <textarea id="message" rows="4"></textarea>
+    <div id="messageError" class="error"></div>
+
+    <input type="submit" value="Gönder">
+</form>
+
+<script>
+function validateForm() {
+    //bu blok içerisinde isValid her zaman true.
+    let isValid = true;
+     
+     /*her biri bağlı oldukları kısmı kontrol edip eğer herhangi biri boş ise veya email düzgün değil ise isValid değerini false yapıp
+     Gönder tuşunun aktive olmasını tamamen engelliyorlar. duyduğuma göre "===" "==" den daha iyiymiş o yüzden üçlü ile gidiyoruz*/
+    // Bu isim doğrulama için. 
+
+    if (document.getElementById("name").value.trim() === "") {
+        document.getElementById("nameError").textContent = "İsim zorunlu!";
+        isValid = false;
+    }
+
+    if (document.getElementById("name").value.trim() !== "") {
+        document.getElementById("nameError").textContent = "";
+        
+    }
+
+    // Bu soyisim için. 
+    if (document.getElementById("surname").value.trim() === "") {
+        document.getElementById("surnameError").textContent = "Soyisim zorunlu!";
+        isValid = false;
+    }
+
+    if (document.getElementById("surname").value.trim() !== "") {
+        document.getElementById("surnameError").textContent = "";
+        
+    }
+
+    // Bu email için
+    if (document.getElementById("email").value.trim() === "") {
+        document.getElementById("emailError").textContent = "Email zorunlu!";
+        isValid = false;
+    } 
+    
+    else if (!isValidEmail(document.getElementById("email").value.trim())) {
+        document.getElementById("emailError").textContent = "Yanlış Email girdin!!";
+        isValid = false;
+    }
+
+    
+
+    
+
+    // Bu da mesaj için
+    if (document.getElementById("message").value.trim() === "") {
+        document.getElementById("messageError").textContent = "Mesaj zorunlu!";
+        isValid = false;
+    }
+    
+    if (document.getElementById("message").value.trim() !== "") {
+        document.getElementById("messageError").textContent = "";
+        
+    }
+
+    return isValid;
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+} //stole this. Got no idea how it works.
+</script>
+</body>
+</html>
